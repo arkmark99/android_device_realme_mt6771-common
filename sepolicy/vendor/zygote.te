@@ -1,0 +1,2 @@
+allow zygote unlabeled:dir { getattr };
+allow zygote unlabeled:file { write };

@@ -1,0 +1,1 @@
+allow system_suspend mtk_agpsd:binder { transfer };

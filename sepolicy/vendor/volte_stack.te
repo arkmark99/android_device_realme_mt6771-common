@@ -1,0 +1,1 @@
+allow volte_stack volte_stack:capability { setuid };
