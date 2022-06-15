@@ -1,2 +1,0 @@
-allow mtk_agpsd hal_apmonitor_hwservice:hwservice_manager find;
-allow mtk_agpsd system_suspend:binder { call };
