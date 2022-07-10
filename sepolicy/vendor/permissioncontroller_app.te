@@ -1,0 +1,2 @@
+type debugfs_ion, debugfs_type;
+allow permissioncontroller_app debugfs_ion:dir { search };
