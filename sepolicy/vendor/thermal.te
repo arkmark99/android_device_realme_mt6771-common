@@ -1,1 +1,1 @@
-allow thermal tel_switch_prop:file { getattr  open  read };
+get_prop(thermal, tel_switch_prop)

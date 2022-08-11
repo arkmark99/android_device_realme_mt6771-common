@@ -1,1 +1,1 @@
-allow kernel kernel:capability { dac_override };
+allow kernel opbootfrom_proc:file r_file_perms;

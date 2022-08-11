@@ -1,3 +1,4 @@
-allow mtk_hal_camera default_android_hwservice:hwservice_manager { add  find };
-allow mtk_hal_camera sysfs_vcore_debug:file { getattr  open  read };
-allow mtk_hal_camera vendor_default_prop:property_service { set };
+set_prop(mtk_hal_camera, oppo_camera_prop)
+get_prop(mtk_hal_camera, oppo_camera_prop)
+get_prop(mtk_hal_camera, mtk_pq_prop)
+get_prop(mtk_hal_camera, mtk_default_prop)

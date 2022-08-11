@@ -1,2 +1,0 @@
-allow volte_imsm_93 mtk_md_version_prop:file { getattr  open  read };
-allow volte_imsm_93 service_nvram_init_prop:file { getattr  open  read };

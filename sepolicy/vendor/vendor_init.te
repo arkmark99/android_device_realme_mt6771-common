@@ -1,15 +1,6 @@
-allow vendor_init drm_data_file:dir { getattr };
-allow vendor_init ims_ipsec_data_file:dir { getattr };
-allow vendor_init logmuch_data_file:dir { getattr };
-allow vendor_init mtk_network_prop:property_service { set };
-allow vendor_init mtk_printk_prop:file { getattr  open  read };
-allow vendor_init unlabeled:file { setattr };
-allow vendor_init drm_data_file:dir create_dir_perms;
-allow vendor_init drm_data_file:dir { write };
-allow vendor_init drm_data_file:dir { add_name };
-allow vendor_init drm_data_file:dir { create };
-allow vendor_init drm_data_file:dir { setattr };
-allow vendor_init logmuch_data_file:dir { create };
-allow vendor_init logmuch_data_file:dir { setattr };
-allow vendor_init ims_ipsec_data_file:dir { create };
-allow vendor_init ims_ipsec_data_file:dir { setattr };
+set_prop(vendor_init, mtk_emcamera_prop)
+allow vendor_init proc_tp:file rw_file_perms;
+
+# Allow vendor init to access persist.vendor.fingerprint.fp_id
+get_prop(vendor_init, oppo_fingerprint_prop) 
+set_prop(vendor_init, oppo_fingerprint_prop) 

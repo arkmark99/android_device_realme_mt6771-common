@@ -1,22 +1,17 @@
-allow init sysfs_dm:file { setattr };
-allow init activity_service:service_manager { find };
-allow init als_ps_device:chr_file { ioctl  open  read };
-allow init default_android_hwservice:hwservice_manager { add  find };
-allow init hal_usb_hwservice:hwservice_manager { add  find };
-allow init mobicore_user_device:chr_file { ioctl  open  read };
-allow init proc:file { write };
-allow init proc_cm_mgr:file { setattr };
-allow init proc_fliperfs:file { setattr };
-allow init proc_perfmgr:file { setattr };
-allow init servicemanager:binder { call };
-allow init settings_service:service_manager { find };
-allow init shell_data_file:dir { add_name  write };
-allow init shell_exec:file { execute_no_trans };
-allow init sysfs_class:lnk_file { read };
-allow init sysfs_fbt_cpu:file { setattr };
-allow init sysfs_ged:file { setattr };
-allow init system_file:file { execute_no_trans };
-allow init system_server:binder { call };
-allow init vendor_file:file { execute  execute_no_trans };
-allow init sysfs_dm:file create_file_perms;
-allow init mobicore_user_device:chr_file { write };
+# Allow init to execute same process hal file
+allow init same_process_hal_file:file execute;
+
+# Allow init to create socket_device(s)
+allow init socket_device:sock_file create_file_perms;
+
+# Allow init to execute vendor file
+allow init vendor_file:file { execute execute_no_trans };
+
+allow init sysfs_sensor:file setattr;
+
+# Allow init to write touchpanel nodes
+allow init proc:file { open write };
+allow init proc_tp:file rw_file_perms;
+
+# Allow init to access /proc/fp_id
+allow init proc_oppo_fp:file rw_file_perms;
